@@ -582,7 +582,6 @@ public final class PowerManagerService extends SystemService
     private QCNsrmPowerExtension qcNsrmPowExt;
 
 
-    private QCNsrmPowerExtension qcNsrmPowExt = new QCNsrmPowerExtension(this);
 
     // True if theater mode is enabled
     private boolean mTheaterModeEnabled;

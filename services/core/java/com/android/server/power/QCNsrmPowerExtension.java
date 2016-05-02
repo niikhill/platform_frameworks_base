@@ -142,6 +142,8 @@ public final class QCNsrmPowerExtension {
                                   PowerManager.WAKE_LOCK_LEVEL_MASK
                                   ) == PowerManager.PARTIAL_WAKE_LOCK )) {
 
+
+
             if (wakeLock.mDisabled != update && pmHandle != null) {
                 wakeLock.mDisabled = update;
                   if (localLOGV) Slog.v(TAG, "updatePmsBlockWakelock pmHandle "+pmHandle);
@@ -154,7 +156,7 @@ public final class QCNsrmPowerExtension {
                 }
                 return true;
             }
-
+        
 
             else {
                if (localLOGV) Slog.v(TAG, "updatePmsBlockWakelock pmHandle "+pmHandle );

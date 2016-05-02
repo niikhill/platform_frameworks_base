@@ -137,9 +137,8 @@ class AlarmManagerService extends SystemService {
     int mBroadcastRefCount = 0;
     PowerManager.WakeLock mWakeLock;
 
-    private QCNsrmAlarmExtension qcNsrmExt = new QCNsrmAlarmExtension();
 
-
+    private QCNsrmAlarmExtension qcNsrmExt = new QCNsrmAlarmExtension(this);
 
     boolean mLastWakeLockUnimportantForLogging;
     ArrayList<Alarm> mPendingNonWakeupAlarms = new ArrayList<>();
@@ -3033,10 +3032,11 @@ class AlarmManagerService extends SystemService {
             if (DEBUG_WAKELOCK) {
                 Slog.d(TAG, "mBroadcastRefCount -> " + mBroadcastRefCount);
             }
-<<<<<<< HEAD
-=======
+
+
+
             qcNsrmExt.removeTriggeredUid(inflight.mUid);
->>>>>>> 3444e8e... Enable NSRM (Network Socket Request Manager).
+
 
             if (mBroadcastRefCount == 0) {
                 mHandler.obtainMessage(AlarmHandler.REPORT_ALARMS_ACTIVE, 0).sendToTarget();
